@@ -30,6 +30,18 @@ const Todolist = () => {
       });
   };
 
+  const updateData = (data) => {
+    console.warn(data)
+    axios
+      .put(`http://localhost:3006/todolist/${data.id}`, data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   const handleAdd = () => {
     if (todo && !toogle) {
       saveData({ id: new Date().toUTCString(), todo });
@@ -40,10 +52,12 @@ const Todolist = () => {
         if (e.id === updateItem) {
           let id = new Date().toUTCString();
           return { ...e, id, todo };
+          
         } else {
           return e;
         }
       });
+      updateData({ id: updateItem, todo });
       setTodolist(uData);
       setTodo("");
       setToogle(false);
