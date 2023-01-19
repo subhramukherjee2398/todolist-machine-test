@@ -6,6 +6,33 @@
   height: 40vmin;
   pointer-events: none;
 }
+.todo{
+  width: 150px;
+    height: 45px;
+    border: none;
+    background-color: rgb(206, 200, 200);
+    font-weight: 400;
+    font-size: 10px;
+}
+.time{
+   width: 50px;
+    height: 45px;
+    border: none;
+    background-color: aqua;
+    font-weight: bold;
+}
+.remove{
+  background-color: rgb(241, 95, 95)
+}
+.update{
+  background-color: rgb(179, 235, 66)
+}
+.todo-container{
+  margin-bottom: 2%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
